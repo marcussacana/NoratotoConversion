@@ -1,0 +1,116 @@
+goto *{0}
+[next type=1 storage=""LABELN:{0}".txt" target="*"LABEL:{0}""]
+SELECT "{0},{1}", "{2},{3}", "{4},{5}"
+[seladd text="{0}" storage=""LABELN:{1}".txt" target=""LABEL:{1}""]\r\n[seladd text="{2}" storage=""LABELN:{3}".txt" target=""LABEL:{3}""]\r\n[seladd text="{4}" storage=""LABELN:{5}".txt" target=""LABEL:{5}""]\r\n[select]\r\n
+SELECT "{0},{1}", "{2},{3}"
+[seladd text="{0}" storage=""LABELN:{1}".txt" target=""LABEL:{1}""]\r\n[seladd text="{2}" storage=""LABELN:{3}".txt" target=""LABEL:{3}""]\r\n[select]\r\n
+SELECT "{0},{1}","{2},{3}"
+[seladd text="{0}" storage=""LABELN:{1}".txt" target=""LABEL:{1}""]\r\n[seladd text="{2}" storage=""LABELN:{3}".txt" target=""LABEL:{3}""]\r\n[select]\r\n
+*{0}
+*"LABEL:{0}"
+SE0 {0},{1}
+[playse storage=""FILE:{0}""]
+SE1 {0},{1}
+[playse storage=""FILE:{0}"" buf=1]
+BG {0}, {1}
+[bg storage=""FILE:{0}"" xpos=480 ypos=270 time={1}]
+BG {0}
+[bg storage=""FILE:{0}"" xpos=480 ypos=270]
+CG {0}, {1}, {2}
+[bg layer={0} storage=""FILE:{1}"" xpos=480 ypos=270 time={2}]
+EV.C {0}, {1}
+[ev storage=""FILE:{0}"" time={1}]
+EV {0}, {1}
+[ev storage=""FILE:{0}"" time={1}]
+EV {0}
+[ev storage=""FILE:{0}""]
+WA {0}
+[wait time={0}]
+BGM {0}
+[playbgm storage=""FILE:{0}""]
+ST {0}, {1}
+[Object name=::AUTONAME:: storage=""SPRITE:{0}""]
+ST {0}
+[Object name=::AUTONAME:: storage=""SPRITE:{0}""]
+ST.DEL
+::FREESPRITE::
+MW.FC {0}
+[face storage=""SPRITE:{0}""]
+CG.DEL
+[ev hide]
+CG.DEL {0}
+[ev layer={0} hide]
+BGM
+[stopbgm]
+BGM, {0}
+[stopbgm]
+SE0
+[stopse]
+SE0, {0}
+[stopse]
+SE1, {0}
+[stopse buf=1]
+VO
+[stopvoice]
+RM.E {0}
+[endrecollection]
+systemVo ,,,{0}/{1}
+[sysvoice storage=""FILE:{1}""]
+CG.XY
+ 
+CGG
+ 
+CG.G
+ 
+SC.DF 
+ 
+AS
+ 
+EV.S
+ 
+RM.S
+ 
+ST.RLR
+ 
+ST.G
+ 
+ST.Y
+ 
+SC.CF
+ 
+SC.G
+ 
+CG.WH
+ 
+CG.DF
+ 
+SC.FL
+ 
+SC.SK
+ 
+MW.SK
+ 
+ST.XY
+ 
+ST.DU
+ 
+ST.RL
+ 
+CG.AN
+ 
+BG.F
+ 
+BG.DF
+ 
+ST.WH
+ 
+ST.SK
+ 
+TL
+ 
+【{0},{1}】{2}
+[voice name="{0}" storage=""FILE:{1}""]\r\n【{0}】{2}[p][cm]\r\n
+【{0}】{1}
+[face hide]\r\n【{0}】{1}[p][cm]\r\n
+{0}
+[face hide]\r\n{0}[p][cm]\r\n
