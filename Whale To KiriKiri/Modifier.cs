@@ -14,6 +14,8 @@ public class Macro {
 				AutoSprite.Free();
 			}
 			
+			Line = Line.Replace("::SCRIPT::", System.IO.Path.GetFileName(Script)).Replace("::RND::", GetRandom().ToString());
+			
 			while (Line.Contains("\"FILE:")){
 				int ID = Line.IndexOf("\"FILE:") + "\"FILE:".Length;
 				int ED = Line.IndexOf("\"", ID);
@@ -60,7 +62,7 @@ public class Macro {
 				Line = Line.Replace("::FREESPRITE::", FreeActors(AutoSprite.Free()));
 			}
 			
-			return Line.Replace("::SCRIPT::", System.IO.Path.GetFileName(Script)).Replace("::RND::", GetRandom().ToString());
+			return Line;
 		
 		} catch {
 			Console.Write("Modifier ERROR: " + Line);
@@ -71,6 +73,8 @@ public class Macro {
 	public string LabelParse(string Label, bool Name){
 		bool WithFlag = Label.First() == '*';
 		Label = Label.TrimStart('*', ' ');
+		if (Name && (Label.ToLower().EndsWith(".ks") || Label.ToLower().EndsWith(".txt")))
+			Label = Label.Substring(0, Label.LastIndexOf("."));
 		char First = Label.First();
 		switch (First.ToString().ToUpper().First()){
 			case 'B':

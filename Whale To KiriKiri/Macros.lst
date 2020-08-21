@@ -68,8 +68,8 @@ AS
  
 EV.S
  
-RM.S
- 
+RM.S {0}
+[eval exp="sf."LABELN:::SCRIPT::" = 1"]
 ST.RLR
  
 ST.G
